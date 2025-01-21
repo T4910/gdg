@@ -3,27 +3,15 @@ import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import { DateTime } from 'luxon'
 
-export default class Task extends BaseModel {
+export default class Role extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-  @column()
-  declare userId: number
-
-  @column()
-  declare title: string
-
-  @column()
-  declare description: string | null
-
-  @column()
-  declare dueDate: DateTime | null
-
   @column({})
-  declare completed: boolean
+  declare name: string
 
   @column()
-  declare public: boolean
+  declare description: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
